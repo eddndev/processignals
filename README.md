@@ -1,61 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
+  <img src="./assets/logo.svg" alt="Logo del Proyecto" width="200">
+  <br/>
+  <h1>
+    <b>Procesignals: Herramientas para Procesamiento Digital de Señales</b>
+  </h1>
+  <p>
+    Una suite de herramientas web para el análisis y visualización de conceptos clave del Procesamiento Digital de Señales (PDS), incluyendo la Transformada de Fourier, Series de Fourier, Convolución y más.
+  </p>
+</div>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
+  <img src="https://img.shields.io/badge/PHP-%3E%3D8.2-8A2BE2?style=for-the-badge&logo=php&logoColor=white" alt="PHP version requirement">
+  <img src="https://img.shields.io/badge/Laravel-12.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-9370DB?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/License-MIT-9370DB?style=for-the-badge" alt="License MIT">
+</div>
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📜 Descripción del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Este proyecto nace como una herramienta educativa y de análisis para la materia de **Procesamiento Digital de Señales**. Su propósito es ofrecer una plataforma interactiva donde los usuarios puedan experimentar con diferentes algoritmos y visualizar los resultados en tiempo real.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+La aplicación busca sintetizar las herramientas fundamentales del PDS, permitiendo a estudiantes y profesionales definir señales, aplicar transformaciones y analizar sus propiedades tanto en el dominio del tiempo como en el de la frecuencia.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Herramientas Incluidas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* **Transformada de Fourier:** Calcula y visualiza el espectro de magnitud y fase de una señal.
+* **Serie de Fourier:** Analiza funciones periódicas descomponiéndolas en una suma de senos y cosenos.
+* **Convolución:** Permite visualizar la convolución de dos señales en tiempo real.
+* **Y más:** Se planea incluir herramientas adicionales en futuras actualizaciones.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🛠️ Tecnologías Utilizadas
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Este proyecto está construido sobre una arquitectura moderna utilizando:
 
-### Premium Partners
+* **Backend:**
+    * **Laravel 12:** Como framework principal para la lógica de negocio y el enrutamiento.
+    * **PHP 8.2:** El lenguaje de programación del lado del servidor.
+* **Frontend:**
+    * **Vite:** Como servidor de desarrollo y empaquetador de assets.
+    * **Tailwind CSS:** Para un estilizado rápido y mantenible.
+    * **GSAP:** Para la creación de animaciones fluidas y de alto rendimiento.
+    * **Plotly.js:** Para la renderización de las gráficas interactivas.
+    * **MathJax:** Para el renderizado de alta calidad de las fórmulas LaTeX.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🚀 Instalación y Puesta en Marcha
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Para ejecutar este proyecto en tu entorno local, sigue estos sencillos pasos.
 
-## Code of Conduct
+### **Pre-requisitos**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Asegúrate de tener instalado **PHP 8.2+**, **Composer** y **Node.js**.
 
-## Security Vulnerabilities
+### **Pasos de Instalación**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1.  **Clona el repositorio** en tu máquina local:
 
-## License
+    ```bash
+    git clone https://github.com/eddndev/processignals.git
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2.  **Navega al directorio** del proyecto:
+
+    ```bash
+    cd processignals
+    ```
+
+3.  **Instala las dependencias de PHP** con Composer:
+
+    ```bash
+    composer install
+    ```
+
+4.  **Instala las dependencias de Node.js** con npm:
+
+    ```bash
+    npm install
+    ```
+
+5.  **Crea una copia del archivo de entorno** y configúralo:
+
+    ```bash
+    cp .env.example .env
+    ```
+    *Abre el archivo `.env` y configura tu base de datos y otras variables de entorno necesarias.*
+
+6.  **Genera la clave de la aplicación** de Laravel:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+7.  **Ejecuta las migraciones** para crear las tablas de la base de datos:
+    ```bash
+    php artisan migrate
+    ```
+
+8.  **Inicia el servidor de desarrollo** de Laravel y Vite:
+
+    ```bash
+    # En una terminal
+    php artisan serve
+
+    # En otra terminal
+    npm run dev
+    ```
+
+¡Y listo\! La aplicación estará disponible en `http://localhost:8000`.
+
+-----
+
+## 👥 Equipo
+
+Este proyecto fue desarrollado por el **Equipo 1 - Procesamiento Digital de Señales**.
+
+| \# | Integrante                    |
+| :-: | :---------------------------- |
+| 1 | `Alonso Sánchez Eduardo`        |
+| 2 | `Bonilla Ramírez Josué Eleazar` |
+| 3 | `Jiménez Meza Ana Harumi`       |
+| 4 | `Quiroz Mora Abel Mauricio`     |
+| 5 | `Vilchis Paniagua Johan Emiliano` |
+
+-----
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
