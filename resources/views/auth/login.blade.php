@@ -33,7 +33,7 @@
                 <div class="flex gap-3">
                     <div class="flex h-6 shrink-0 items-center">
                         <div class="group grid size-4 grid-cols-1">
-                            <input id="remember-me" type="checkbox" name="remember-me" class="col-start-1 row-start-1 appearance-none rounded-sm border border-slate-300 bg-white checked:border-green-gold-600 checked:bg-green-gold-600 indeterminate:border-green-gold-600 indeterminate:bg-green-gold-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-gold-600 disabled:border-slate-300 disabled:bg-slate-100 disabled:checked:bg-slate-100 dark:border-slate-600 dark:bg-slate-700 dark:checked:border-green-gold-500 dark:checked:bg-green-gold-500 dark:indeterminate:border-green-gold-500 dark:indeterminate:bg-green-gold-500 dark:focus-visible:outline-green-gold-500 forced-colors:appearance-auto" />
+                            <input id="remember-me" type="checkbox" name="remember-me" class="col-start-1 row-start-1 appearance-none rounded-sm border border-slate-300 bg-white checked:border-purple-blue-600 checked:bg-purple-blue-600 indeterminate:border-purple-blue-600 indeterminate:bg-purple-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-blue-600 disabled:border-slate-300 disabled:bg-slate-100 disabled:checked:bg-slate-100 dark:border-slate-600 dark:bg-slate-700 dark:checked:border-purple-blue-500 dark:checked:bg-purple-blue-500 dark:indeterminate:border-purple-blue-500 dark:indeterminate:bg-purple-blue-500 dark:focus-visible:outline-purple-blue-500 forced-colors:appearance-auto" />
                             <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-gray-950/25 dark:group-has-disabled:stroke-white/25">
                             <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100" />
                             <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100" />
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="text-sm/6">
-                    <a href="{{ route('password.request') }}" class="font-medium text-green-gold-600 hover:text-green-gold-700 dark:text-green-gold-400 dark:hover:text-green-gold-500">¿Olvidaste tu contraseña?</a>
+                    <a href="{{ route('password.request') }}" class="font-medium text-purple-blue-600 hover:text-purple-blue-700 dark:text-purple-blue-400 dark:hover:text-purple-blue-500">¿Olvidaste tu contraseña?</a>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
         </div>
         <p class="mt-10 text-center text-sm/6 text-slate-500 dark:text-slate-400">
         ¿No tienes una cuenta?
-        <a href="{{ route('register') }}" class="font-medium text-green-gold-600 hover:text-green-gold-700 dark:text-green-gold-400 dark:hover:text-green-gold-500">Regístrate</a>
+        <a href="{{ route('register') }}" class="font-medium text-purple-blue-600 hover:text-purple-blue-700 dark:text-purple-blue-400 dark:hover:text-purple-blue-500">Regístrate</a>
         </p>
     </div>
 </x-guest-layout>
