@@ -82,9 +82,9 @@
                 </a>
             </div>
         </div>
-        <p class="mt-10 text-center text-sm/6 text-slate-500 dark:text-slate-400">
-        ¿No tienes una cuenta?
-        <a href="{{ route('register') }}" class="font-medium text-purple-blue-600 hover:text-purple-blue-700 dark:text-purple-blue-400 dark:hover:text-purple-blue-500">Regístrate</a>
-        </p>
     </div>
+    <p class="mt-10 text-center text-sm/6 text-slate-500 dark:text-slate-400">
+    ¿No tienes una cuenta?
+    <a href="{{ route('register') }}" class="font-medium text-purple-blue-600 hover:text-purple-blue-700 dark:text-purple-blue-400 dark:hover:text-purple-blue-500">Regístrate</a>
+    </p>
 </x-guest-layout>
