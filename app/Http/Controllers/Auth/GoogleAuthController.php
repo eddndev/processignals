@@ -27,27 +27,46 @@ class GoogleAuthController extends Controller
     public function callback()
     {
         try {
-            // 1. Obtiene el usuario de Google
             $googleUser = Socialite::driver('google')->user();
 
-            $user = User::updateOrCreate(
-                [
-                    'email' => $googleUser->getEmail(), // Ahora se guardará
-                ],
-                [
-                    'name' => $googleUser->getName(),
-                    'google_id' => $googleUser->getId(),
+            // Busca si el usuario ya existe por el ID de Google
+            $user = User::where('google_id', $googleUser->getId())->first();
+
+            if ($user) {
+                // Si existe, actualiza el token y listo
+                $user->update([
                     'google_token' => $googleUser->token,
                     'google_refresh_token' => $googleUser->refreshToken,
-                    'email_verified_at' => now(),
-                    'password' => Hash::make(Str::random(24)),
-                ]
-            );
+                ]);
+            } else {
+                // Si no existe por ID de Google, busca por email
+                $user = User::where('email', $googleUser->getEmail())->first();
 
-            // 3. Inicia sesión con el usuario encontrado o creado
+                if ($user) {
+                    // Si existe por email, vincula la cuenta con el ID de Google
+                    $user->update([
+                        'google_id' => $googleUser->getId(),
+                        'google_token' => $googleUser->token,
+                        'google_refresh_token' => $googleUser->refreshToken,
+                    ]);
+                } else {
+                    // Si no existe de ninguna forma, crea un nuevo usuario
+                    $user = User::create([
+                        'name' => $googleUser->getName(),
+                        'email' => $googleUser->getEmail(),
+                        'google_id' => $googleUser->getId(),
+                        'google_token' => $googleUser->token,
+                        'google_refresh_token' => $googleUser->refreshToken,
+                        'email_verified_at' => now(),
+                        'password' => Hash::make(Str::random(24)), // Contraseña aleatoria segura
+                    ]);
+                }
+            }
+
+            // Inicia sesión con el usuario encontrado o creado
             Auth::login($user, remember: true);
 
-            // 4. Redirige al usuario a su dashboard
+            // Redirige al usuario a su dashboard
             return redirect()->intended(route('home', absolute: false));
 
         } catch (Exception $e) {

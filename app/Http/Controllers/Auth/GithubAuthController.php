@@ -29,19 +29,39 @@ class GithubAuthController extends Controller
         try {
             $githubUser = Socialite::driver('github')->user();
 
-            $user = User::updateOrCreate(
-                [
-                    'email' => $githubUser->getEmail(),
-                ],
-                [
-                    'name' => $githubUser->getName() ?? $githubUser->getNickname(),
-                    'github_id' => $githubUser->getId(),
+            // Busca si el usuario ya existe por el ID de GitHub
+            $user = User::where('github_id', $githubUser->getId())->first();
+
+            if ($user) {
+                // Si existe, actualiza el token y listo
+                $user->update([
                     'github_token' => $githubUser->token,
                     'github_refresh_token' => $githubUser->refreshToken,
-                    'email_verified_at' => now(),
-                    'password' => Hash::make(Str::random(24)),
-                ]
-            );
+                ]);
+            } else {
+                // Si no existe por ID de GitHub, busca por email
+                $user = User::where('email', $githubUser->getEmail())->first();
+
+                if ($user) {
+                    // Si existe por email, vincula la cuenta con el ID de GitHub
+                    $user->update([
+                        'github_id' => $githubUser->getId(),
+                        'github_token' => $githubUser->token,
+                        'github_refresh_token' => $githubUser->refreshToken,
+                    ]);
+                } else {
+                    // Si no existe de ninguna forma, crea un nuevo usuario
+                    $user = User::create([
+                        'name' => $githubUser->getName() ?? $githubUser->getNickname(),
+                        'email' => $githubUser->getEmail(),
+                        'github_id' => $githubUser->getId(),
+                        'github_token' => $githubUser->token,
+                        'github_refresh_token' => $githubUser->refreshToken,
+                        'email_verified_at' => now(),
+                        'password' => Hash::make(Str::random(24)), // Contraseña aleatoria segura
+                    ]);
+                }
+            }
 
             Auth::login($user, remember: true);
 
