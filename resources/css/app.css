@@ -5,9 +5,39 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
 @theme {
-  --font-sans:
-    Figtree, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-green-gold-50: #F1F8E8;
+  --color-green-gold-100: #DCEFBF;
+  --color-green-gold-200: #BEDA92;
+  --color-green-gold-300: #9DC46A;
+  --color-green-gold-400: #7EAE49;
+  --color-green-gold-500: #61972F;
+  --color-green-gold-600: #4A7B20;
+  --color-green-gold-700: #3A621A;
+  --color-green-gold-800: #2E4D16;
+  --color-green-gold-900: #243C12;
+  --color-green-gold-950: #15240A;
+
+  --color-gold-200: #FDE68A;
+  --color-gold-400: #FACC15;
+  --color-gold-600: #D97706;
+
+  --color-slate-50: #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
+  --color-slate-950: #020617;
+
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-warning: #F59E0B;
 }
 
 /*
@@ -27,3 +57,79 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 }
+
+@layer components {
+    .btn-green-gold {
+        /*
+        |--------------------------------------------------------------------------
+        | Capa 1: El Gradiente Metálico
+        |--------------------------------------------------------------------------
+        | Usamos múltiples paradas con tus tokens de diseño para simular
+        | un reflejo curvo: un brillo superior, el color principal
+        | y una sombra profunda en la parte inferior.
+        */
+        background-image: linear-gradient(
+            170deg,
+            var(--color-green-gold-300),   /* Borde superior brillante */
+            var(--color-green-gold-400) 15%,  /* Banda de luz principal */
+            var(--color-green-gold-600) 50%,  /* Tono medio y color principal */
+            var(--color-green-gold-800) 90%,  /* Sombra profunda */
+            var(--color-green-gold-950) 100% /* Borde inferior oscuro */
+        );
+
+        /*
+        |--------------------------------------------------------------------------
+        | Capa 2: Efecto 3D (Biselado y Sombra)
+        |--------------------------------------------------------------------------
+        | Un borde sutil y sombras internas (inset) crean la ilusión de
+        | un borde biselado que captura la luz.
+        */
+        transition: all 0.3s ease-in-out;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | Capa 3: Brillo Dinámico (Sheen)
+    |--------------------------------------------------------------------------
+    | Usamos el pseudo-elemento ::before para crear un destello radial
+    | que se anima al pasar el cursor, simulando un reflejo en una
+    | superficie pulida.
+    */
+    .btn-green-gold::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        padding-top: 150%; /* Truco para mantener la proporción circular */
+        border-radius: 50%;
+        background-image: radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 60%
+        );
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* --- ESTADOS DE INTERACCIÓN --- */
+
+    /* Hover: El botón se ilumina y el brillo aparece */
+    .btn-green-gold:hover {
+        filter: brightness(1.15);
+    }
+
+    .btn-green-gold:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    /* Active (Click): El botón se presiona */
+    .btn-green-gold:active {
+        transform: scale(0.97);
+        filter: brightness(0.9);
+        transition-duration: 0.1s;
+    }
+}
+
