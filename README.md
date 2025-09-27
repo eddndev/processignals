@@ -2,7 +2,7 @@
   <img src="./assets/logo.svg" alt="Logo del Proyecto" width="200">
   <br/>
   <h1>
-    <b>Procesignals: Herramientas para Procesamiento Digital de Señales</b>
+    <b>Achronyme: Herramientas para Procesamiento Digital de Señales</b>
   </h1>
   <p>
     Una suite de herramientas web para el análisis y visualización de conceptos clave del Procesamiento Digital de Señales (PDS), incluyendo la Transformada de Fourier, Series de Fourier, Convolución y más.

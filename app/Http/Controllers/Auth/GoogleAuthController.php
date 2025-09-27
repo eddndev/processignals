@@ -53,7 +53,7 @@ class GoogleAuthController extends Controller
         } catch (Exception $e) {
             // Si algo sale mal (ej. el usuario deniega el acceso),
             // se registra el error y se redirige al login con un mensaje.
-            Log::error('Error en la autenticación con Google: ' . $e->getMessage());
+            Log::error('Error en la autenticación con Google', ['exception' => $e]);
 
             return redirect('/login')->with('error', 'No se pudo autenticar con Google. Por favor, inténtelo de nuevo.');
         }
