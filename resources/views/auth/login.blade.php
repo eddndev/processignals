@@ -64,7 +64,7 @@
             </div>
 
             <div class="mt-6 grid grid-cols-2 gap-4">
-                <a href="#" class="flex w-full items-center justify-center gap-3 rounded-md bg-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 shadow-xs border border-slate-300 hover:bg-slate-300 focus-visible:inset-ring-transparent dark:bg-slate-700 dark:text-slate-200 dark:shadow-none dark:border-slate-600 dark:hover:bg-slate-600">
+                <a href="{{ route('google.redirect') }}" class="flex w-full items-center justify-center gap-3 rounded-md bg-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 shadow-xs border border-slate-300 hover:bg-slate-300 focus-visible:inset-ring-transparent dark:bg-slate-700 dark:text-slate-200 dark:shadow-none dark:border-slate-600 dark:hover:bg-slate-600">
                     <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5">
                     <path d="M12.0003 4.75C13.7703 4.75 15.3553 5.36002 16.6053 6.54998L20.0303 3.125C17.9502 1.19 15.2353 0 12.0003 0C7.31028 0 3.25527 2.69 1.28027 6.60998L5.27028 9.70498C6.21525 6.86002 8.87028 4.75 12.0003 4.75Z" fill="#EA4335" />
                     <path d="M23.49 12.275C23.49 11.49 23.415 10.73 23.3 10H12V14.51H18.47C18.18 15.99 17.34 17.25 16.08 18.1L19.945 21.1C22.2 19.01 23.49 15.92 23.49 12.275Z" fill="#4285F4" />
